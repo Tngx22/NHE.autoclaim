@@ -75,15 +75,15 @@ def main(data):
 
         stop.append(0)
 
-    print(str(fails) + ' failed attempt' + 's'*(fails > 1) if fails else '(➜SUKSES NGEKLAIM YA BANGSAT!!!')
+    print(str(fails) + ' failed attempt' + 's'*(fails > 1) if fails else 'SUCCEED!!!')
 
 
 def print_wait(stop):
-    for dot in itertools.cycle(['SABAR COK', 'SABAR COK', 'SABAR COK']):
+    for dot in itertools.cycle(['.', '..', '...']):
         if stop:
             break
 
-        print(f'SABAR ANJING{dot:<3}', end='\r')
+        print(f'waiting{dot:<3}', end='\r')
         time.sleep(0.5)
 
 
@@ -140,7 +140,7 @@ def check_claim(sess_html, is_claimed):
         ).group()
     )
 
-    message = '👍SELESAI  '*(not is_claimed) + f'DI KLAIM : {n_claim+is_claimed}/{PERIOD_D.day} HARI'    
+    message = 'ALREADY '*(not is_claimed) + f'CLAIMED: {n_claim+is_claimed}/{PERIOD_D.day} DAYS'    
 
     return message
 
@@ -172,7 +172,7 @@ if __name__ == '__main__':
             )
         )
 
-        num = input(f'Untuk ngeklaim silahkan pencet ENTER DI KEYBOARD (1 - {len(data)}): ') or 1
+        num = input(f'Starting Point(1 - {len(data)}): ') or 1
 
         print()
 
