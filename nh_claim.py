@@ -103,7 +103,7 @@ def main(data, num):
         time.sleep(1)
 
     else:
-        print('SUKSES NGEKLAIM BANGSATTTT!!!')
+        print('SUCCEED!!!')
 
     driver.close()
 
@@ -120,7 +120,7 @@ def print_claimed(driver, is_claimed):
         'html.parser'
     ).select('h5')[0].text.replace('LOGIN COUNT ', '')
 
-    print(('SUDAH DI CLAIM BANGSAT' if is_claimed else ' CLAIMED') + claimed)
+    print((' ALREADY CLAIMED' if is_claimed else ' CLAIMED') + claimed)
 
 
 def claim(driver, server):
