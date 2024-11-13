@@ -23,6 +23,6 @@ jobs:
           pip install -r requirements.txt
 
       - name: Start Claim
-        run: python nh_claim-fast.py 1 Chrome
+        run: python nh_claim-fast.py 1 
         
          
